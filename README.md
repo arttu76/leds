@@ -1,16 +1,15 @@
 # LED dithering implementation for Adafruit NeoPixel Library
 
-At the time of writing controlling LEDs and LED strips via NeoPixel library is trivial. However, the library does not take into account that LED brightness is not linear. What this means that with "regular code" the LEDs brighten too fast and it's impossible to do color fades and gradients by simply specifying RGB linear values.
+At the time of writing controlling LEDs and LED strips via NeoPixel library is trivial. However, the library does not take into account that LED brightness is not linear. What this means that with "regular code" the LEDs brighten too fast and it's impossible to do color fades and gradients by using linear RGB values.
 
-The implementation found in this repository allows you to:
-- Light up single LED by specifying linear RGB values:
+The implementation found in this repository allows you to control:
+- single LED by specifying linear RGB values:
 The implementation will try to choose as good intensity values as possible
-... or alternatively ...
-- Light up multiple LEDS by specifying linear RGB values:
-The implementation will automatically utilize dithering to achieve the optimum result
+- multiple LEDS by specifying linear RGB values:
+The implementation will automatically use dithering to achieve the optimum result
 
 ## How to use it
-Just grab the led.c and led.h, include leds.h and initialize your LED strip as usual, for example ...
+Just grab the leds.c and leds.h, include leds.h and initialize your LED strip as usual, for example ...
 ~~~
 #include "./leds.h"
 #include <Adafruit_NeoPixel.h>
